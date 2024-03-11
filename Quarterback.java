@@ -10,6 +10,7 @@ public class Quarterback extends Player {
         throwCount = 0;
     }
     
+    @Override
     public void train() {
         System.out.println(getName() + " the quarterback, is training.");
     }
@@ -18,7 +19,10 @@ public class Quarterback extends Player {
         return throwCount;
     }
     
+    @Override
     public void playGame() {
+        super.playGame();
+
         int throwsThisGame = (int) (Math.random()*20);
         throwCount += throwsThisGame;
         System.out.println(getName() + " threw " + throwsThisGame + " balls this game.");

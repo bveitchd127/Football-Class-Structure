@@ -4,7 +4,7 @@ public class Main {
         Quarterback p1 = new Quarterback("Justin Fields", 1);
         Player p2 = new Player("DJ Moore", "wide reciever", 2);
         
-        for (int i = 0; i < 7; i++ ){
+        for (int i = 0; i < 4; i++ ){
             System.out.println("\nGame #" + (i+1));
             p1.train();
             p2.train();

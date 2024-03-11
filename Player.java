@@ -29,6 +29,7 @@ public class Player {
         System.out.println(name + " the player, is training.");
     }
     
+    @Override
     public String toString() {
         return name + " (" + jerseyNumber + ")";
     }
