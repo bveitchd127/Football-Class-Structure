@@ -1,27 +1,30 @@
-public class Quarterback extends Player {
-    //                   ******new*****
+public class Quarterback extends Player{
     //        subclass         superclass
-    private int throwCount;
-    
-    public Quarterback(String name, int jerseyNumber) {
-        // first line must be superclass's constructor
-        super(name, "quarterback", jerseyNumber);
-        
-        throwCount = 0;
+
+    private int totalPasses;
+
+    public Quarterback(String name, int number) {
+        // Like we're calling `new Player(name, number)`
+        super(name, number);
+        totalPasses = 0;
     }
-    
-    public void train() {
-        System.out.println(getName() + " the quarterback, is training.");
-    }
-    
-    public int getThrowCount() {
-        return throwCount;
-    }
-    
+
+    // this comment doesn't need a semicolon
+    @Override
     public void playGame() {
-        int throwsThisGame = (int) (Math.random()*20);
-        throwCount += throwsThisGame;
-        System.out.println(getName() + " threw " + throwsThisGame + " balls this game.");
+        int randomThrows = (int) (Math.random()*21) + 20; // randomly generate number between 20 and 40
+        totalPasses += randomThrows;
+        System.out.println(getName() + " threw " + randomThrows + " passes this game.");
+        // This will call superclass's playGame instead of the more specific one.
+        super.playGame();
     }
-    
+
+    public int getTotalPasses() {
+        return totalPasses;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " (Quarterback " + getNumber() + ")";
+    }
 }

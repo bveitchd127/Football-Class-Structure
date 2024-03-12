@@ -1,35 +1,38 @@
 public class Player {
-    private String name;
-    private String position;
-    private int jerseyNumber;
+    // A player is their name and their number
+    // A player can do the actions "playGame" and "train"
     
-    public Player(String name, String myPosition, int jerseyNumber) {
+    // All objects organize things into what they are,
+    // and what they can do
+    
+    private String name;
+    private int number;
+    
+    public Player(String name, int number) {
         this.name = name;
-        position = myPosition;
-        this.jerseyNumber = jerseyNumber;
+        this.number = number;
     }
     
     public String getName() {
-        return name;
+        return this.name;
     }
     
-    public String getPosition() {
-        return position;
+    public int getNumber() {
+        return this.number;
     }
-    
-    public int getJerseyNumber() {
-        return jerseyNumber;
-    }
-    
-    public void playGame() {
-        System.out.println(name + " the player, is playing a game.");
-    }
-    
+
+
     public void train() {
-        System.out.println(name + " the player, is training.");
+        System.out.println(this.name + " is training.");
+    }
+
+    public void playGame() {
+        System.out.println(this.name + " is playing a game.");
     }
     
+    // Override decorator
+    @Override
     public String toString() {
-        return name + " (" + jerseyNumber + ")";
+        return this.name + " (" + this.number + ")";
     }
 }

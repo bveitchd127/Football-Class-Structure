@@ -1,18 +1,21 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        Quarterback p1 = new Quarterback("Justin Fields", 1);
-        Player p2 = new Player("DJ Moore", "wide reciever", 2);
-        
-        for (int i = 0; i < 7; i++ ){
-            System.out.println("\nGame #" + (i+1));
-            p1.train();
-            p2.train();
-            
-            p1.playGame();
-            p2.playGame();
-        }
-        System.out.println("\n" + p1.getName() + " throw count:");
-        System.out.println(p1.getThrowCount());
+        Quarterback player1 = new Quarterback("Justin Fields", 1);
+        Player player2 = new Player("DJ Moore", 2);
+
+
+        System.out.println(player1);
+        player1.train();
+        player1.playGame();
+        System.out.println(player1.getTotalPasses());
+
+        System.out.println(player2);
+        player2.train();
+        player2.playGame();
+        // System.out.println(player2.getTotalPasses());
+
     }
 }
