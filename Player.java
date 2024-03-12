@@ -28,6 +28,10 @@ public class Player {
     public void train() {
         System.out.println(name + " the player, is training.");
     }
+
+    // public int getThrowCount() {
+    //     return 0;
+    // }
     
     @Override
     public String toString() {
